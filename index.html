@@ -13,8 +13,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10%;
-    background-color: rgba(255, 255, 255, 0); /* Vollständig transparenter Hintergrund */
+    height: 15%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparenter Hintergrund */
     backdrop-filter: blur(2px); /* Reduzierter Blur-Effekt */
     -webkit-backdrop-filter: blur(2px); /* Für Safari */
     z-index: 1;
@@ -24,10 +24,14 @@
     flex-direction: column;
     text-align: center;
   }
+  #top-bar h1, #top-bar p {
+    margin: 0;
+    color: #000; /* Textfarbe auf Schwarz setzen */
+  }
   #mute-toggle {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     padding: 5px 10px;
     background-color: rgba(255, 255, 255, 0.7);
     border: none;
@@ -47,8 +51,8 @@
 </head>
 <body>
 <div id="top-bar">
-  <h1 style="margin-top: 10px; color: #000;">Die Hood</h1> <!-- Textfarbe auf Schwarz setzen -->
-  <p style="color: #000;">ft. Linus, Jan (2x), Melvin, Felix, Justus</p> <!-- Textfarbe auf Schwarz setzen -->
+  <h1>Die Hood</h1> <!-- Textfarbe auf Schwarz setzen -->
+  <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p> <!-- Textfarbe auf Schwarz setzen -->
 </div>
 <button id="mute-toggle" onclick="toggleMute()">Mute/Unmute</button>
 <iframe 
