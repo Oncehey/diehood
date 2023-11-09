@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Meine Website</title>
+<style>
+  #video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+  }
+  #content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 100px;
+  }
+</style>
 </head>
 <body>
-
-<h1>Hallo Hood</h1>
-
+<iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/B0duA-pQV7A?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+<div id="content">
+  <h1>Hier kommt dein Inhalt</h1>
+  <p>Das ist der Inhalt deiner Website</p>
+</div>
 </body>
 </html>
