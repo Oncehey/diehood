@@ -7,32 +7,15 @@
     margin: 0;
     overflow: hidden;
   }
-  #video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-  }
-  #content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding: 20px;
-  }
   #top-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 10%;
-    background-color: rgba(255, 255, 255, 0); /* vollständig transparenter Hintergrund */
-    backdrop-filter: blur(2px); /* reduzierter Blur-Effekt */
-    -webkit-backdrop-filter: blur(2px); /* für Safari */
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(2px); /* Reduced blur effect */
+    -webkit-backdrop-filter: blur(2px); /* For Safari */
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -51,6 +34,14 @@
     cursor: pointer;
     z-index: 2;
   }
+  iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+  }
 </style>
 </head>
 <body>
@@ -58,17 +49,24 @@
   <h1 style="margin-top: 10px;">Die Hood</h1>
   <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p>
 </div>
-<button id="mute-toggle" onclick="toggleMute()">Ton an/aus</button>
-<iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/lB22bkPFSjo?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=lB22bkPFSjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<button id="mute-toggle" onclick="toggleMute()">Mute/Unmute</button>
+<iframe 
+    width="100%" 
+    height="100%" 
+    src="https://www.youtube.com/embed/lB22bkPFSjo?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=lB22bkPFSjo" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
 <script>
   var isMuted = false;
-  var video = document.querySelector('iframe');
   function toggleMute() {
+    var iframe = document.querySelector('iframe');
     if (isMuted) {
-      video.contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
+      iframe.contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
       isMuted = false;
     } else {
-      video.contentWindow.postMessage('{"event":"command","func":"' + 'mute' + '","args":""}', '*');
+      iframe.contentWindow.postMessage('{"event":"command","func":"' + 'mute' + '","args":""}', '*');
       isMuted = true;
     }
   }
