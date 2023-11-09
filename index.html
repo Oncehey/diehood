@@ -46,6 +46,42 @@
   <h1 style="margin-top: 10px;">Die Hood</h1>
   <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p>
 </div>
-<iframe id="video-background" src="https://www.youtube.com/embed/lB22bkPFSjo?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=lB22bkPFSjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-background', {
+      height: '100%',
+      width: '100%',
+      videoId: 'lB22bkPFSjo',
+      playerVars: {
+        'autoplay': 1,
+        'controls': 0,
+        'showinfo': 0,
+        'autohide': 1,
+        'loop': 1,
+        'playlist': 'lB22bkPFSjo',
+        'modestbranding': 1,
+        'fs': 0,
+        'cc_load_policy': 0,
+        'iv_load_policy': 3,
+        'rel': 0
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+  function onPlayerReady(event) {
+    event.target.mute();
+  }
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.ENDED) {
+      player.playVideo();
+    }
+  }
+</script>
+<div id="video-background"></div>
 </body>
 </html>
