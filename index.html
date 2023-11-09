@@ -6,6 +6,7 @@
   body {
     margin: 0;
     overflow: hidden;
+    color: #fff; /* Textfarbe auf Weiß setzen */
   }
   #top-bar {
     position: fixed;
@@ -13,9 +14,9 @@
     left: 0;
     width: 100%;
     height: 10%;
-    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
-    backdrop-filter: blur(2px); /* Reduced blur effect */
-    -webkit-backdrop-filter: blur(2px); /* For Safari */
+    background-color: rgba(255, 255, 255, 0); /* Vollständig transparenter Hintergrund */
+    backdrop-filter: blur(2px); /* Reduzierter Blur-Effekt */
+    -webkit-backdrop-filter: blur(2px); /* Für Safari */
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -46,8 +47,8 @@
 </head>
 <body>
 <div id="top-bar">
-  <h1 style="margin-top: 10px;">Die Hood</h1>
-  <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p>
+  <h1 style="margin-top: 10px; color: #000;">Die Hood</h1> <!-- Textfarbe auf Schwarz setzen -->
+  <p style="color: #000;">ft. Linus, Jan (2x), Melvin, Felix, Justus</p> <!-- Textfarbe auf Schwarz setzen -->
 </div>
 <button id="mute-toggle" onclick="toggleMute()">Mute/Unmute</button>
 <iframe 
