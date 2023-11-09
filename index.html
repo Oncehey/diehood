@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body {
-    margin: 0;
-    overflow: hidden;
-    color: #fff; /* Textfarbe auf Weiß setzen */
-  }
-  #top-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,6 +16,7 @@
     color: #fff; /* Textfarbe auf Weiß setzen */
   }
   #mute-toggle {
+    display: none; /* Auf Nicht-Mobilgeräten ausblenden */
     position: fixed;
     top: 10px;
     left: 10px;
@@ -45,6 +35,13 @@
     width: 100vw;
     height: 100vh;
     z-index: -100;
+  }
+
+  /* Media Query für Mobilgeräte */
+  @media only screen and (max-width: 600px) {
+    #mute-toggle {
+      display: block; /* Auf Mobilgeräten einblenden */
+    }
   }
 </style>
 </head>
