@@ -12,6 +12,7 @@
     color: #fff;
     background: #000;
     position: relative;
+    overflow: hidden; /* Um sicherzustellen, dass das Video den gesamten Bildschirm bedeckt */
   }
   #top-bar {
     position: absolute;
@@ -45,7 +46,11 @@
     z-index: 2;
   }
   iframe {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 0;
   }
   img {
