@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,8 @@
     height: 100vh;
     margin: 0;
     color: #fff;
-    background: #000;
+    background: url('https://cdn.discordapp.com/attachments/705332134746783749/1172138821207478384/output-onlinepngtools.png') no-repeat center center fixed;
+    background-size: cover;
     position: relative;
     overflow: hidden; /* Um sicherzustellen, dass das Video den gesamten Bildschirm bedeckt */
   }
@@ -53,11 +54,6 @@
     height: 100vh;
     z-index: 0;
   }
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
 </style>
 </head>
 <body>
@@ -75,7 +71,6 @@
     allowfullscreen
     muted>
 </iframe>
-<img src="https://cdn.discordapp.com/attachments/705332134746783749/1172138821207478384/output-onlinepngtools.png" alt="background-image">
 <script>
   var isMuted = true;
   function toggleMute() {
