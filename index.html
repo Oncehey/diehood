@@ -39,6 +39,16 @@
     flex-direction: column;
     text-align: center;
   }
+  #mute-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -46,9 +56,11 @@
   <h1 style="margin-top: 10px;">Die Hood</h1>
   <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p>
 </div>
+<button id="mute-toggle" onclick="toggleMute()">Ton an/aus</button>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
   var player;
+  var isMuted = false;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-background', {
       height: '100%',
@@ -74,11 +86,20 @@
     });
   }
   function onPlayerReady(event) {
-    event.target.unMute();
+    event.target.playVideo();
   }
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
       player.playVideo();
+    }
+  }
+  function toggleMute() {
+    if (isMuted) {
+      player.unMute();
+      isMuted = false;
+    } else {
+      player.mute();
+      isMuted = true;
     }
   }
 </script>
