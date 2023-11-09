@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    color: #fff; /* Textfarbe auf Weiß setzen */
+  }
+  #top-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -61,7 +72,7 @@
     muted>
 </iframe>
 <script>
-  var isMuted = false;
+  var isMuted = true;
   function toggleMute() {
     var iframe = document.querySelector('iframe');
     if (isMuted) {
