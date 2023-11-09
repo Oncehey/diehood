@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,9 +14,9 @@
     left: 0;
     width: 100%;
     height: 15%;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparenter Hintergrund */
-    backdrop-filter: blur(2px); /* Reduzierter Blur-Effekt */
-    -webkit-backdrop-filter: blur(2px); /* Für Safari */
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+    backdrop-filter: blur(5px); /* Erhöhter Blur-Effekt */
+    -webkit-backdrop-filter: blur(5px); /* Für Safari */
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -26,14 +26,15 @@
   }
   #top-bar h1, #top-bar p {
     margin: 0;
-    color: #000; /* Textfarbe auf Schwarz setzen */
+    color: #fff; /* Textfarbe auf Weiß setzen */
   }
   #mute-toggle {
     position: fixed;
     top: 10px;
     left: 10px;
     padding: 5px 10px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff; /* Textfarbe auf Weiß setzen */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -51,8 +52,8 @@
 </head>
 <body>
 <div id="top-bar">
-  <h1>Die Hood</h1> <!-- Textfarbe auf Schwarz setzen -->
-  <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p> <!-- Textfarbe auf Schwarz setzen -->
+  <h1>Die Hood</h1> <!-- Textfarbe auf Weiß setzen -->
+  <p>ft. Linus, Jan (2x), Melvin, Felix, Justus</p> <!-- Textfarbe auf Weiß setzen -->
 </div>
 <button id="mute-toggle" onclick="toggleMute()">Mute/Unmute</button>
 <iframe 
