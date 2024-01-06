@@ -8,6 +8,27 @@
         body {
             background-color: #333333;
             margin: 0;
+
+            import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.whufc.com/fixture/list/713"
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # Assuming the fixture information is in a specific HTML element
+    fixture_list = soup.find("div", class_="fixture-list")
+
+    if fixture_list:
+        # Print or process the fixture list as needed
+        print(fixture_list.text)
+    else:
+        print("Fixture list not found on the page.")
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
         }
     </style>
 </head>
