@@ -1,35 +1,38 @@
 window.onload = function() {
     const audioVideo = document.getElementById("background-video-audio");
     const visualVideo = document.getElementById("background-video-visual");
+    const playButton = document.getElementById("playButton");
 
-    // Attempt to autoplay the audio and video with initial mute to bypass restrictions
-    function playMedia() {
-        // Try to play audio (treated as video)
+    // Function to start audio and video
+    function startMedia() {
+        playButton.style.display = 'none'; // Hide the button once clicked
+        
+        // Try to play the audio/video (muted first to bypass autoplay restrictions)
         audioVideo.play().then(() => {
             console.log("Audio (via video) is playing!");
             audioVideo.muted = false;  // Unmute after it starts playing
         }).catch((error) => {
             console.log("Audio (via video) failed to autoplay:", error);
-            // Fallback: Retry after a short delay
+            // Retry playback after delay
             setTimeout(() => {
-                audioVideo.play();  // Retry to play after 500ms
+                audioVideo.play();
             }, 500);
         });
 
-        // Try to play the visual video
+        // Try to play the visual video as well
         visualVideo.play().then(() => {
             console.log("Visual video is playing!");
-            visualVideo.muted = false;  // Unmute the visual video
+            visualVideo.muted = false;  // Unmute visual video
         }).catch((error) => {
             console.log("Visual video failed to autoplay:", error);
         });
     }
 
-    // First attempt to autoplay both media when page loads
-    playMedia();
+    // Attempt to play the media automatically when the page is loaded
+    startMedia();
 
-    // Retry autoplay on user interaction as a last resort
-    document.body.addEventListener('click', () => {
-        playMedia();
+    // Add a fallback for mobile or browsers that block autoplay
+    playButton.addEventListener('click', () => {
+        startMedia();
     });
 };
