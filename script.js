@@ -1,12 +1,10 @@
-// script.js
-
+// script.js - Optional JavaScript if you want to manipulate the video/audio
 window.onload = () => {
     const video = document.getElementById("background-video");
-    
-    // Ensure the video plays first (to satisfy autoplay restrictions)
+
+    // Ensure the video plays and unmute it after a slight delay
     video.play().then(() => {
-        // Once the video is playing, unmute it
-        video.muted = false;
+        video.muted = false;  // Unmute the video
     }).catch((error) => {
         console.error("Video playback failed:", error);
     });
