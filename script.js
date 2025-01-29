@@ -1,39 +1,11 @@
-// Function to start audio and video
-function startMedia() {
-    const audioVideo = document.getElementById("background-video-audio");
-    const visualVideo = document.getElementById("background-video-visual");
-    const playButton = document.getElementById("playButton");
+// When the page loads, we attempt to play the audio automatically
+window.onload = function() {
+    const audio = document.getElementById("background-audio");
 
-    playButton.style.display = 'none'; // Hide the button once clicked
-
-    // Try to play the audio/video (muted first to bypass autoplay restrictions)
-    audioVideo.play().then(() => {
-        console.log("Audio (via video) is playing!");
-        audioVideo.muted = false;  // Unmute after it starts playing
+    // Try to play the audio (muted first to bypass autoplay restrictions if necessary)
+    audio.play().then(() => {
+        console.log("Audio is playing!");
     }).catch((error) => {
-        console.log("Audio (via video) failed to autoplay:", error);
-        // Retry playback after delay
-        setTimeout(() => {
-            audioVideo.play();
-        }, 500);
+        console.log("Autoplay failed:", error);
     });
-
-    // Try to play the visual video as well
-    visualVideo.play().then(() => {
-        console.log("Visual video is playing!");
-        visualVideo.muted = false;  // Unmute visual video
-    }).catch((error) => {
-        console.log("Visual video failed to autoplay:", error);
-    });
-}
-
-// Ensure the DOM is fully loaded before running the script
-document.addEventListener("DOMContentLoaded", function() {
-    // Attempt to play the media automatically when the page is loaded
-    startMedia();
-
-    // Add a fallback for mobile or browsers that block autoplay
-    document.getElementById('playButton').addEventListener('click', () => {
-        startMedia();
-    });
-});
+};
