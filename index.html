@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>melvin</title>
+    <title>Melvin's Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Video background -->
     <div class="video-background">
-        <video autoplay loop id="background-video">
-          <source src="yourvideo.mp4" type="video/mp4">
+        <video autoplay loop id="background-video" controls>
+            <!-- Corrected file path -->
+            <source src="images/yourvideo.mp4" type="video/mp4">
+            <source src="images/yourvideo.webm" type="video/webm"> <!-- Add a webm version for compatibility -->
+            <source src="images/yourvideo.ogv" type="video/ogg"> <!-- Optional, add an ogv version for compatibility -->
             Your browser does not support the video tag.
         </video>
     </div>
 
     <!-- Main Content -->
     <div class="content">
-        <h1>melvin</h1>
+        <h1>Melvin</h1>
     </div>
 
     <script src="script.js"></script>
