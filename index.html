@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=-DWvknfi07s">
+    <title>Dark Theme Video Background</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Sie werden weitergeleitet... Falls die automatische Weiterleitung nicht funktioniert, <a href="https://www.youtube.com/watch?v=-DWvknfi07s">klicken Sie hier</a>.</p>
+
+    <!-- Video background -->
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="diehood/images/yourvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is a clean, dark-themed website with a video background.</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
