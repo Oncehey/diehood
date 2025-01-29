@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melvin's Website</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- CSS Styling within the HTML file -->
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Black background */
+        body {
+            background-color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* You can add any additional content or styling here */
+    </style>
 </head>
 <body>
 
@@ -14,6 +37,20 @@
         Your browser does not support the audio element.
     </audio>
 
-    <script src="script.js"></script>
+    <!-- JavaScript within the HTML file -->
+    <script>
+        // When the page loads, attempt to play the audio automatically
+        window.onload = function() {
+            const audio = document.getElementById("background-audio");
+
+            // Try to play the audio (muted first to bypass autoplay restrictions if necessary)
+            audio.play().then(() => {
+                console.log("Audio is playing!");
+            }).catch((error) => {
+                console.log("Autoplay failed:", error);
+            });
+        };
+    </script>
+
 </body>
 </html>
