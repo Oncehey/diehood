@@ -8,16 +8,16 @@
 </head>
 <body>
 
-    <!-- Video for background visual (the video itself) -->
-    <video id="background-video-visual" autoplay loop muted playsinline>
+    <!-- Video for background visual -->
+    <video id="background-video-visual" autoplay loop muted playsinline preload="auto">
         <source src="images/yourvideo.mp4" type="video/mp4">
         <source src="images/yourvideo.webm" type="video/webm">
         <source src="images/yourvideo.ogv" type="video/ogg">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Video for background audio (the audio treated as a video source) -->
-    <video id="background-video-audio" autoplay loop muted playsinline>
+    <!-- Video for background audio (treated as video source) -->
+    <video id="background-video-audio" autoplay loop muted playsinline preload="auto">
         <source src="images/yourvideo.mp3" type="audio/mp3">
         Your browser does not support the video tag or audio format.
     </video>
@@ -25,6 +25,7 @@
     <!-- Content -->
     <div class="content">
         <h1>Melvin</h1>
+        <button id="playButton" onclick="startMedia()">Play Audio & Video</button>
     </div>
 
     <script src="script.js"></script>
