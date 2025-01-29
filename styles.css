@@ -38,25 +38,10 @@ body {
 }
 
 h1 {
-    font-size: 1em;  /* Reduced size to 1/3 */
+    font-size: 1em;  /* Adjusted size */
     margin-bottom: 20px;
 }
 
 p {
     font-size: 1.5em;
-}
-
-/* Optional: Add some subtle animation to the text */
-h1 {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
