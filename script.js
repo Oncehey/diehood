@@ -27,7 +27,8 @@ function startMedia() {
     });
 }
 
-window.onload = function() {
+// Ensure the DOM is fully loaded before running the script
+document.addEventListener("DOMContentLoaded", function() {
     // Attempt to play the media automatically when the page is loaded
     startMedia();
 
@@ -35,4 +36,4 @@ window.onload = function() {
     document.getElementById('playButton').addEventListener('click', () => {
         startMedia();
     });
-};
+});
