@@ -33,12 +33,21 @@
 <body>
     <div class="text">@melvin</div>
     <div class="video-text" onclick="playMedia()">Play Video</div>
-    <video id="video" src="images/yourvideo.mp4" style="display: none;"></video>
+    <video id="video" src="images/yourvideo.mp4" style="display: none;" playsinline></video>
     <audio id="audio" src="images/yourvideo.mp3"></audio>
     <script>
         function playMedia() {
             const video = document.getElementById('video');
             const audio = document.getElementById('audio');
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { /* Firefox */
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE/Edge */
+                video.msRequestFullscreen();
+            }
             video.style.display = 'block';
             video.play();
             audio.play();
