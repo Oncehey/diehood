@@ -31,6 +31,10 @@
             cursor: pointer;
             position: relative;
             z-index: 2;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-out {
+            opacity: 0;
         }
         .video-container {
             position: fixed;
@@ -52,7 +56,7 @@
 </head>
 <body>
     <div class="text">@melvin</div>
-    <div class="video-text" onclick="playMedia()">Play Video</div>
+    <div class="video-text" id="videoText" onclick="playMedia()">click to enter...</div>
     <div class="video-container" id="videoContainer">
         <video id="video" src="images/yourvideo.mp4" playsinline></video>
     </div>
@@ -60,6 +64,8 @@
         function playMedia() {
             const videoContainer = document.getElementById('videoContainer');
             const video = document.getElementById('video');
+            const videoText = document.getElementById('videoText');
+            videoText.classList.add('fade-out');
             videoContainer.style.display = 'flex';
             video.play();
         }
