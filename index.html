@@ -1,56 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melvin's Website</title>
-    
-    <!-- CSS Styling within the HTML file -->
+    <title>Die Hood</title>
     <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Black background */
         body {
-            background-color: #000;
-            height: 100vh;
+            background-color: #171922;
+            color: #828187;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            overflow: hidden;
         }
-
-        /* You can add any additional content or styling here */
+        .text {
+            font-size: 10px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #828187, 0 0 10px #828187, 0 0 15px #828187;
+        }
     </style>
 </head>
 <body>
-
-    <!-- Audio element to play sound -->
-    <audio id="background-audio" autoplay loop>
-        <source src="images/yourvideo.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- JavaScript within the HTML file -->
-    <script>
-        // When the page loads, attempt to play the audio automatically
-        window.onload = function() {
-            const audio = document.getElementById("background-audio");
-
-            // Try to play the audio (muted first to bypass autoplay restrictions if necessary)
-            audio.play().then(() => {
-                console.log("Audio is playing!");
-            }).catch((error) => {
-                console.log("Autoplay failed:", error);
-            });
-        };
-    </script>
-
+    <div class="text">@melvin</div>
 </body>
 </html>
