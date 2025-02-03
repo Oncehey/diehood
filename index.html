@@ -16,6 +16,15 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+        .text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: transparent;
+            transition: background-color 0.5s ease-in-out;
+        }
         .text {
             font-size: 12px;
             font-weight: bold;
@@ -55,8 +64,10 @@
     </style>
 </head>
 <body>
-    <div class="text">@melvin</div>
-    <div class="video-text" id="videoText" onclick="playMedia()">click to enter...</div>
+    <div class="text-container" id="textContainer">
+        <div class="text">@melvin</div>
+    </div>
+    <div class="video-text" id="videoText" onclick="playMedia()">Click here...</div>
     <div class="video-container" id="videoContainer">
         <video id="video" src="images/yourvideo.mp4" playsinline></video>
     </div>
@@ -65,7 +76,11 @@
             const videoContainer = document.getElementById('videoContainer');
             const video = document.getElementById('video');
             const videoText = document.getElementById('videoText');
+            const textContainer = document.getElementById('textContainer');
+            
             videoText.classList.add('fade-out');
+            textContainer.style.backgroundColor = '#828187';
+            
             videoContainer.style.display = 'flex';
             video.play();
         }
